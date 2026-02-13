@@ -1,0 +1,18 @@
+{
+  "name": "attention-guard",
+  "version": "1.0.0",
+  "description": "Chrome Extension for focus sessions with persistent timer and panic button",
+  "scripts": {
+    "build": "tsc && npm run copy-assets",
+    "copy-assets": "powershell -Command \"Copy-Item src/styles.css dist/styles.css -Force\"",
+    "watch": "tsc --watch",
+    "clean": "rm -rf dist",
+    "pack:store": "npm run build && node scripts/pack-for-store.js"
+  },
+  "devDependencies": {
+    "archiver": "^7.0.1",
+    "@types/chrome": "^0.1.36",
+    "@types/node": "^25.2.3",
+    "typescript": "^5.3.3"
+  }
+}
